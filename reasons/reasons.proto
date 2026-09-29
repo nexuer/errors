@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package reasons;
+
+option go_package = "github.com/nexuer/errors/reasons;reasons";
+option java_multiple_files = true;
+option java_package = "com.github.nexuer.errors.reasons";
+
+import "errors.proto";
+
+enum Reason {
+  option (nexuer.errors.default_code) = 500;
+
+  INTERNAL_SERVER_ERROR = 0;
+  NOT_FOUND = 1 [(nexuer.errors.code) = 404];
+  BAD_REQUEST = 2 [(nexuer.errors.code) = 400];
+  UNAUTHORIZED = 3 [(nexuer.errors.code) = 401];
+  FORBIDDEN = 4 [(nexuer.errors.code) = 403];
+  CONFLICT = 5 [(nexuer.errors.code) = 409];
+  TOO_MANY_REQUESTS = 6 [(nexuer.errors.code) = 429];
+  CLIENT_CLOSED = 7 [(nexuer.errors.code) = 499];
+  SERVICE_UNAVAILABLE = 8 [(nexuer.errors.code) = 503];
+  GATEWAY_TIMEOUT = 9 [(nexuer.errors.code) = 504];
+  REQUEST_TOO_LARGE = 10 [(nexuer.errors.code) = 413];
+  CODEC = 11 [(nexuer.errors.code) = 400];
+  NOT_ACCEPTABLE = 12 [(nexuer.errors.code) = 406];
+}

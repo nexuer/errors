@@ -1,0 +1,8 @@
+go 1.25.0
+
+use (
+	.
+	./cmd/protoc-gen-go-errors
+)
+
+replace github.com/nexuer/errors v0.0.1 => .
