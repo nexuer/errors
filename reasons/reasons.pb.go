@@ -25,19 +25,22 @@ const (
 type Reason int32
 
 const (
-	Reason_INTERNAL_SERVER_ERROR Reason = 0
-	Reason_NOT_FOUND             Reason = 1
-	Reason_BAD_REQUEST           Reason = 2
-	Reason_UNAUTHORIZED          Reason = 3
-	Reason_FORBIDDEN             Reason = 4
-	Reason_CONFLICT              Reason = 5
-	Reason_TOO_MANY_REQUESTS     Reason = 6
-	Reason_CLIENT_CLOSED         Reason = 7
-	Reason_SERVICE_UNAVAILABLE   Reason = 8
-	Reason_GATEWAY_TIMEOUT       Reason = 9
-	Reason_REQUEST_TOO_LARGE     Reason = 10
-	Reason_CODEC                 Reason = 11
-	Reason_NOT_ACCEPTABLE        Reason = 12
+	Reason_INTERNAL_SERVER_ERROR    Reason = 0
+	Reason_NOT_FOUND                Reason = 1
+	Reason_BAD_REQUEST              Reason = 2
+	Reason_UNAUTHORIZED             Reason = 3
+	Reason_FORBIDDEN                Reason = 4
+	Reason_CONFLICT                 Reason = 5
+	Reason_TOO_MANY_REQUESTS        Reason = 6
+	Reason_CLIENT_CLOSED            Reason = 7
+	Reason_SERVICE_UNAVAILABLE      Reason = 8
+	Reason_GATEWAY_TIMEOUT          Reason = 9
+	Reason_REQUEST_ENTITY_TOO_LARGE Reason = 10
+	Reason_CODEC                    Reason = 11
+	Reason_NOT_ACCEPTABLE           Reason = 12
+	Reason_METHOD_NOT_ALLOWED       Reason = 13
+	Reason_UNSUPPORTED_MEDIA_TYPE   Reason = 14
+	Reason_BAD_GATEWAY              Reason = 15
 )
 
 // Enum value maps for Reason.
@@ -53,24 +56,30 @@ var (
 		7:  "CLIENT_CLOSED",
 		8:  "SERVICE_UNAVAILABLE",
 		9:  "GATEWAY_TIMEOUT",
-		10: "REQUEST_TOO_LARGE",
+		10: "REQUEST_ENTITY_TOO_LARGE",
 		11: "CODEC",
 		12: "NOT_ACCEPTABLE",
+		13: "METHOD_NOT_ALLOWED",
+		14: "UNSUPPORTED_MEDIA_TYPE",
+		15: "BAD_GATEWAY",
 	}
 	Reason_value = map[string]int32{
-		"INTERNAL_SERVER_ERROR": 0,
-		"NOT_FOUND":             1,
-		"BAD_REQUEST":           2,
-		"UNAUTHORIZED":          3,
-		"FORBIDDEN":             4,
-		"CONFLICT":              5,
-		"TOO_MANY_REQUESTS":     6,
-		"CLIENT_CLOSED":         7,
-		"SERVICE_UNAVAILABLE":   8,
-		"GATEWAY_TIMEOUT":       9,
-		"REQUEST_TOO_LARGE":     10,
-		"CODEC":                 11,
-		"NOT_ACCEPTABLE":        12,
+		"INTERNAL_SERVER_ERROR":    0,
+		"NOT_FOUND":                1,
+		"BAD_REQUEST":              2,
+		"UNAUTHORIZED":             3,
+		"FORBIDDEN":                4,
+		"CONFLICT":                 5,
+		"TOO_MANY_REQUESTS":        6,
+		"CLIENT_CLOSED":            7,
+		"SERVICE_UNAVAILABLE":      8,
+		"GATEWAY_TIMEOUT":          9,
+		"REQUEST_ENTITY_TOO_LARGE": 10,
+		"CODEC":                    11,
+		"NOT_ACCEPTABLE":           12,
+		"METHOD_NOT_ALLOWED":       13,
+		"UNSUPPORTED_MEDIA_TYPE":   14,
+		"BAD_GATEWAY":              15,
 	}
 )
 
@@ -105,7 +114,7 @@ var File_reasons_reasons_proto protoreflect.FileDescriptor
 
 const file_reasons_reasons_proto_rawDesc = "" +
 	"\n" +
-	"\x15reasons/reasons.proto\x12\areasons\x1a\ferrors.proto*\xce\x02\n" +
+	"\x15reasons/reasons.proto\x12\areasons\x1a\ferrors.proto*\xac\x03\n" +
 	"\x06Reason\x12\x19\n" +
 	"\x15INTERNAL_SERVER_ERROR\x10\x00\x12\x13\n" +
 	"\tNOT_FOUND\x10\x01\x1a\x04\xa8E\x94\x03\x12\x15\n" +
@@ -116,11 +125,14 @@ const file_reasons_reasons_proto_rawDesc = "" +
 	"\x11TOO_MANY_REQUESTS\x10\x06\x1a\x04\xa8E\xad\x03\x12\x17\n" +
 	"\rCLIENT_CLOSED\x10\a\x1a\x04\xa8E\xf3\x03\x12\x1d\n" +
 	"\x13SERVICE_UNAVAILABLE\x10\b\x1a\x04\xa8E\xf7\x03\x12\x19\n" +
-	"\x0fGATEWAY_TIMEOUT\x10\t\x1a\x04\xa8E\xf8\x03\x12\x1b\n" +
-	"\x11REQUEST_TOO_LARGE\x10\n" +
+	"\x0fGATEWAY_TIMEOUT\x10\t\x1a\x04\xa8E\xf8\x03\x12\"\n" +
+	"\x18REQUEST_ENTITY_TOO_LARGE\x10\n" +
 	"\x1a\x04\xa8E\x9d\x03\x12\x0f\n" +
 	"\x05CODEC\x10\v\x1a\x04\xa8E\x90\x03\x12\x18\n" +
-	"\x0eNOT_ACCEPTABLE\x10\f\x1a\x04\xa8E\x96\x03\x1a\x04\xa0E\xf4\x03BN\n" +
+	"\x0eNOT_ACCEPTABLE\x10\f\x1a\x04\xa8E\x96\x03\x12\x1c\n" +
+	"\x12METHOD_NOT_ALLOWED\x10\r\x1a\x04\xa8E\x95\x03\x12 \n" +
+	"\x16UNSUPPORTED_MEDIA_TYPE\x10\x0e\x1a\x04\xa8E\x9f\x03\x12\x15\n" +
+	"\vBAD_GATEWAY\x10\x0f\x1a\x04\xa8E\xf6\x03\x1a\x04\xa0E\xf4\x03BN\n" +
 	" com.github.nexuer.errors.reasonsP\x01Z(github.com/nexuer/errors/reasons;reasonsb\x06proto3"
 
 var (

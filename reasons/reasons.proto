@@ -21,7 +21,10 @@ enum Reason {
   CLIENT_CLOSED = 7 [(nexuer.errors.code) = 499];
   SERVICE_UNAVAILABLE = 8 [(nexuer.errors.code) = 503];
   GATEWAY_TIMEOUT = 9 [(nexuer.errors.code) = 504];
-  REQUEST_TOO_LARGE = 10 [(nexuer.errors.code) = 413];
+  REQUEST_ENTITY_TOO_LARGE = 10 [(nexuer.errors.code) = 413];
   CODEC = 11 [(nexuer.errors.code) = 400];
   NOT_ACCEPTABLE = 12 [(nexuer.errors.code) = 406];
+  METHOD_NOT_ALLOWED = 13 [(nexuer.errors.code) = 405];
+  UNSUPPORTED_MEDIA_TYPE = 14 [(nexuer.errors.code) = 415];
+  BAD_GATEWAY = 15 [(nexuer.errors.code) = 502];
 }

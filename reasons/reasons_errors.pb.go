@@ -160,19 +160,19 @@ func ErrorGatewayTimeout(format string, args ...any) *errors.Error {
 	return errors.New(504, Reason_GATEWAY_TIMEOUT.String(), format)
 }
 
-func IsRequestTooLarge(err error) bool {
+func IsRequestEntityTooLarge(err error) bool {
 	if err == nil {
 		return false
 	}
 	e := errors.FromError(err)
-	return e.Reason == Reason_REQUEST_TOO_LARGE.String() && e.Code == 413
+	return e.Reason == Reason_REQUEST_ENTITY_TOO_LARGE.String() && e.Code == 413
 }
 
-func ErrorRequestTooLarge(format string, args ...any) *errors.Error {
+func ErrorRequestEntityTooLarge(format string, args ...any) *errors.Error {
 	if len(args) > 0 {
-		return errors.Newf(413, Reason_REQUEST_TOO_LARGE.String(), format, args...)
+		return errors.Newf(413, Reason_REQUEST_ENTITY_TOO_LARGE.String(), format, args...)
 	}
-	return errors.New(413, Reason_REQUEST_TOO_LARGE.String(), format)
+	return errors.New(413, Reason_REQUEST_ENTITY_TOO_LARGE.String(), format)
 }
 
 func IsCodec(err error) bool {
@@ -203,4 +203,49 @@ func ErrorNotAcceptable(format string, args ...any) *errors.Error {
 		return errors.Newf(406, Reason_NOT_ACCEPTABLE.String(), format, args...)
 	}
 	return errors.New(406, Reason_NOT_ACCEPTABLE.String(), format)
+}
+
+func IsMethodNotAllowed(err error) bool {
+	if err == nil {
+		return false
+	}
+	e := errors.FromError(err)
+	return e.Reason == Reason_METHOD_NOT_ALLOWED.String() && e.Code == 405
+}
+
+func ErrorMethodNotAllowed(format string, args ...any) *errors.Error {
+	if len(args) > 0 {
+		return errors.Newf(405, Reason_METHOD_NOT_ALLOWED.String(), format, args...)
+	}
+	return errors.New(405, Reason_METHOD_NOT_ALLOWED.String(), format)
+}
+
+func IsUnsupportedMediaType(err error) bool {
+	if err == nil {
+		return false
+	}
+	e := errors.FromError(err)
+	return e.Reason == Reason_UNSUPPORTED_MEDIA_TYPE.String() && e.Code == 415
+}
+
+func ErrorUnsupportedMediaType(format string, args ...any) *errors.Error {
+	if len(args) > 0 {
+		return errors.Newf(415, Reason_UNSUPPORTED_MEDIA_TYPE.String(), format, args...)
+	}
+	return errors.New(415, Reason_UNSUPPORTED_MEDIA_TYPE.String(), format)
+}
+
+func IsBadGateway(err error) bool {
+	if err == nil {
+		return false
+	}
+	e := errors.FromError(err)
+	return e.Reason == Reason_BAD_GATEWAY.String() && e.Code == 502
+}
+
+func ErrorBadGateway(format string, args ...any) *errors.Error {
+	if len(args) > 0 {
+		return errors.Newf(502, Reason_BAD_GATEWAY.String(), format, args...)
+	}
+	return errors.New(502, Reason_BAD_GATEWAY.String(), format)
 }
