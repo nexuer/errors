@@ -9,7 +9,7 @@ import (
 )
 
 // release is the current protoc-gen-go-errors version.
-const release = "v0.0.1"
+const release = "v0.0.2"
 
 var showVersion = flag.Bool("version", false, "print the version and exit")
 

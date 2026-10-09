@@ -5,4 +5,4 @@ use (
 	./cmd/protoc-gen-go-errors
 )
 
-replace github.com/nexuer/errors v0.0.1 => .
+replace github.com/nexuer/errors v0.0.4 => .

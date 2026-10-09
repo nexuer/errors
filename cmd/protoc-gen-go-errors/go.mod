@@ -3,7 +3,7 @@ module github.com/nexuer/errors/cmd/protoc-gen-go-errors
 go 1.25.0
 
 require (
-	github.com/nexuer/errors v0.0.1
+	github.com/nexuer/errors v0.0.4
 	golang.org/x/text v0.41.0
 	google.golang.org/protobuf v1.36.12
 )

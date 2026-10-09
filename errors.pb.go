@@ -94,30 +94,30 @@ var file_errors_proto_extTypes = []protoimpl.ExtensionInfo{
 	{
 		ExtendedType:  (*descriptorpb.EnumOptions)(nil),
 		ExtensionType: (*int32)(nil),
-		Field:         1108,
+		Field:         51008,
 		Name:          "nexuer.errors.default_code",
-		Tag:           "varint,1108,opt,name=default_code",
+		Tag:           "varint,51008,opt,name=default_code",
 		Filename:      "errors.proto",
 	},
 	{
 		ExtendedType:  (*descriptorpb.EnumValueOptions)(nil),
 		ExtensionType: (*int32)(nil),
-		Field:         1109,
+		Field:         51009,
 		Name:          "nexuer.errors.code",
-		Tag:           "varint,1109,opt,name=code",
+		Tag:           "varint,51009,opt,name=code",
 		Filename:      "errors.proto",
 	},
 }
 
 // Extension fields to descriptorpb.EnumOptions.
 var (
-	// optional int32 default_code = 1108;
+	// optional int32 default_code = 51008;
 	E_DefaultCode = &file_errors_proto_extTypes[0]
 )
 
 // Extension fields to descriptorpb.EnumValueOptions.
 var (
-	// optional int32 code = 1109;
+	// optional int32 code = 51009;
 	E_Code = &file_errors_proto_extTypes[1]
 )
 
@@ -133,9 +133,9 @@ const file_errors_proto_rawDesc = "" +
 	"\bmetadata\x18\x04 \x03(\v2#.nexuer.errors.Status.MetadataEntryR\bmetadata\x1a;\n" +
 	"\rMetadataEntry\x12\x10\n" +
 	"\x03key\x18\x01 \x01(\tR\x03key\x12\x14\n" +
-	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:@\n" +
-	"\fdefault_code\x12\x1c.google.protobuf.EnumOptions\x18\xd4\b \x01(\x05R\vdefaultCode:6\n" +
-	"\x04code\x12!.google.protobuf.EnumValueOptions\x18\xd5\b \x01(\x05R\x04codeBL\n" +
+	"\x05value\x18\x02 \x01(\tR\x05value:\x028\x01:A\n" +
+	"\fdefault_code\x12\x1c.google.protobuf.EnumOptions\x18\xc0\x8e\x03 \x01(\x05R\vdefaultCode:7\n" +
+	"\x04code\x12!.google.protobuf.EnumValueOptions\x18\xc1\x8e\x03 \x01(\x05R\x04codeBL\n" +
 	"\x18com.github.nexuer.errorsP\x01Z\x1fgithub.com/nexuer/errors;errors\xa2\x02\fNexuerErrorsb\x06proto3"
 
 var (
